@@ -24,3 +24,4 @@ C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\Spotify
 C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.Cliente.resources
 C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.GestionarUsuario.resources
 C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.CrearPlaylist.resources
+C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.GestionarCanciones.resources

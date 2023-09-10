@@ -13,6 +13,9 @@
     <Compile Update="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GestionarCanciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GestionarUsuario.vb">
       <SubType>Form</SubType>
     </Compile>

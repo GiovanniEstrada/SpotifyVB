@@ -22,7 +22,7 @@ Public Class Playlist
         conn.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
         Try
             conn.Open()
-            Dim command As New MySqlCommand("INSERT INTO PLAYLIST (ID_USUARIO, nombre_playlist, fecha_creacion, img_cover) VALUES (@USERID, @NAME, @DATE, @URL")
+            Dim command As New MySqlCommand("INSERT INTO PLAYLIST (ID_USUARIO, nombre_playlist, fecha_creacion, img_cover) VALUES (@USERID, @NAME, @DATE, @URL)", conn)
             command.Parameters.AddWithValue("@USERID", Me.usuarioID)
             command.Parameters.AddWithValue("@NAME", Me.nombre)
             command.Parameters.AddWithValue("@DATE", Me.fecha)
@@ -49,7 +49,7 @@ Public Class Playlist
         conn.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
         Try
             conn.Open()
-            Dim cmd As New MySqlCommand("SELECT * FROM PLAYLIST WHERE ID_USUARIO = @ID_USUARIO")
+            Dim cmd As New MySqlCommand("SELECT * FROM PLAYLIST WHERE ID_USUARIO = @ID_USUARIO", conn)
             cmd.Parameters.AddWithValue("@ID_USUARIO", Me.usuarioID)
             Dim reader As MySqlDataReader = cmd.ExecuteReader()
             Return reader
@@ -67,7 +67,7 @@ Public Class Playlist
         conn.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
         Try
             conn.Open()
-            Dim cmd As New MySqlCommand("SELECT TOP 1 ID_PLAYLIST FROM PLAYLIST ORDER BY ID_PLAYLIST DESC")
+            Dim cmd As New MySqlCommand("SELECT ID_PLAYLIST FROM PLAYLIST ORDER BY ID_PLAYLIST DESC", conn)
             Dim reader As MySqlDataReader = cmd.ExecuteReader()
             reader.Read()
             Me.id = reader("ID_PLAYLIST").ToString()
@@ -86,7 +86,7 @@ Public Class Playlist
         conn.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
         Try
             conn.Open()
-            Dim cmd As New MySqlCommand("UPDATE PLAYLIST SET nombre_playlist = @NOMBRE, fecha_creacion = @FECHA, img_cover = @URL WHERE ID_PLAYLIST = @ID")
+            Dim cmd As New MySqlCommand("UPDATE PLAYLIST SET nombre_playlist = @NOMBRE, fecha_creacion = @FECHA, img_cover = @URL WHERE ID_PLAYLIST = @ID", conn)
             cmd.Parameters.AddWithValue("@NOMBRE", nwNombre)
             cmd.Parameters.AddWithValue("@FECHA", nwFecha)
             cmd.Parameters.AddWithValue("@URL", nwURL)

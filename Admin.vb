@@ -22,4 +22,14 @@ Public Class Admin
         gestionUsuario.Show()
     End Sub
 
+    Private Sub button2_Click(sender As Object, e As EventArgs) Handles button2.Click
+        Dim gestionarCancion As New GestionarCanciones()
+        gestionarCancion.Show()
+    End Sub
+
+    Private Sub button5_Click(sender As Object, e As EventArgs) Handles button5.Click
+        Dim login As New Form1
+        login.Show()
+        Me.Hide()
+    End Sub
 End Class
