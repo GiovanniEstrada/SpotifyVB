@@ -32,4 +32,9 @@ Public Class Admin
         login.Show()
         Me.Hide()
     End Sub
+
+    Private Sub button3_Click(sender As Object, e As EventArgs) Handles button3.Click
+        Dim gestionarArtista As New GestionarArtista()
+        gestionarArtista.Show()
+    End Sub
 End Class

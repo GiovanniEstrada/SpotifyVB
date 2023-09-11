@@ -25,3 +25,9 @@ C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\Spotify
 C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.GestionarUsuario.resources
 C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.CrearPlaylist.resources
 C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.GestionarCanciones.resources
+C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\Interop.MediaPlayer.dll
+C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\Interop.WMPLib.dll
+C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.vbproj.ResolveComReference.cache
+C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.GestionarArtista.resources
+C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.VerPlaylist.resources
+C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.EditarPlaylist.resources

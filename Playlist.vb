@@ -5,6 +5,7 @@ Public Class Playlist
     Public Property nombre As String
     Public Property fecha As String
     Public urlImg As String
+    Private Property DatabaseSetup As String = "server=localhost;user id=root;password=;database=prueba"
 
     Public Sub New(id As String, usuario As String, nombre As String, fecha As String, url As String)
         Me.id = id
@@ -19,7 +20,7 @@ Public Class Playlist
     Public Function CrearPlaylist()
         Dim conn As New MySqlConnection
 
-        conn.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
+        conn.ConnectionString = DatabaseSetup
         Try
             conn.Open()
             Dim command As New MySqlCommand("INSERT INTO PLAYLIST (ID_USUARIO, nombre_playlist, fecha_creacion, img_cover) VALUES (@USERID, @NAME, @DATE, @URL)", conn)
@@ -46,7 +47,7 @@ Public Class Playlist
     'READ
     Public Function ObtenerPorUsuario()
         Dim conn As New MySqlConnection
-        conn.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
+        conn.ConnectionString = DatabaseSetup
         Try
             conn.Open()
             Dim cmd As New MySqlCommand("SELECT * FROM PLAYLIST WHERE ID_USUARIO = @ID_USUARIO", conn)
@@ -55,8 +56,26 @@ Public Class Playlist
             Return reader
         Catch ex As Exception
             MessageBox.Show("Hubo un error al conectarse al servidor")
-        Finally
-            conn.Close()
+        End Try
+
+        Return False
+    End Function
+
+    Public Function ObtenerPorID()
+        Dim conn As New MySqlConnection
+        conn.ConnectionString = DatabaseSetup
+        Try
+            conn.Open()
+            Dim cmd As New MySqlCommand("SELECT * FROM PLAYLIST WHERE ID_PLAYLIST = @ID", conn)
+            cmd.Parameters.AddWithValue("@ID", Me.id)
+            Dim reader As MySqlDataReader = cmd.ExecuteReader()
+            reader.Read()
+            usuarioID = reader("ID_USUARIO")
+            nombre = reader("nombre_playlist")
+            fecha = reader("fecha_creacion")
+            urlImg = reader("img_cover")
+        Catch ex As Exception
+            MessageBox.Show("Hubo un error al conectarse al servidor")
         End Try
 
         Return False
@@ -64,7 +83,7 @@ Public Class Playlist
 
     Public Function ObtenerUltimoID()
         Dim conn As New MySqlConnection
-        conn.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
+        conn.ConnectionString = DatabaseSetup
         Try
             conn.Open()
             Dim cmd As New MySqlCommand("SELECT ID_PLAYLIST FROM PLAYLIST ORDER BY ID_PLAYLIST DESC", conn)
@@ -81,14 +100,13 @@ Public Class Playlist
     End Function
 
     'UPDATE
-    Public Function actualizarPlaylist(nwNombre As String, nwFecha As String, nwURL As String)
+    Public Function actualizarPlaylist(nwNombre As String, nwURL As String)
         Dim conn As New MySqlConnection
-        conn.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
+        conn.ConnectionString = DatabaseSetup
         Try
             conn.Open()
-            Dim cmd As New MySqlCommand("UPDATE PLAYLIST SET nombre_playlist = @NOMBRE, fecha_creacion = @FECHA, img_cover = @URL WHERE ID_PLAYLIST = @ID", conn)
+            Dim cmd As New MySqlCommand("UPDATE PLAYLIST SET nombre_playlist = @NOMBRE, img_cover = @URL WHERE ID_PLAYLIST = @ID", conn)
             cmd.Parameters.AddWithValue("@NOMBRE", nwNombre)
-            cmd.Parameters.AddWithValue("@FECHA", nwFecha)
             cmd.Parameters.AddWithValue("@URL", nwURL)
             cmd.Parameters.AddWithValue("@ID", Me.id)
             Dim response As Integer = cmd.ExecuteNonQuery()
@@ -107,7 +125,7 @@ Public Class Playlist
     'DELETE
     Public Function borrarPlaylist(nwNombre As String, nwFecha As String, nwURL As String)
         Dim conn As New MySqlConnection
-        conn.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
+        conn.ConnectionString = DatabaseSetup
         Try
             conn.Open()
             Dim cmd As New MySqlCommand("DELETE FROM PLAYLIST WHERE ID_PLAYLIST = @ID")

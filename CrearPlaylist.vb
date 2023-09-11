@@ -12,8 +12,6 @@ Public Class CrearPlaylist
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
         Me.cliente = c
-        Label1.Text = Me.cliente.Nombre
-
         Dim canciones As New Canciones("", "", "", 0, 0, "", "")
         reader = canciones.ObtenerCanciones()
         While reader.Read()
@@ -35,10 +33,11 @@ Public Class CrearPlaylist
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'BOTON QUE CREA LA PLAYLIST
         Dim fecha As New Date
+        fecha = Today
         If (ruta.Equals("") Or Nombre.Text.ToString().Equals("")) Then
             MessageBox.Show("Faltan campos")
         Else
-            Dim playlist As New Playlist("", cliente.ID, Nombre.Text.ToString(), Format(fecha, "dd/mm/yyyy").ToString(), ruta)
+            Dim playlist As New Playlist("", cliente.ID, Nombre.Text.ToString(), fecha.ToString(), ruta)
             playlist.CrearPlaylist()
             For Each item In Box.CheckedItems
                 Dim idplaylist As Integer = CInt(playlist.id)

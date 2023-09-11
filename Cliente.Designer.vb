@@ -22,28 +22,135 @@ Partial Class Cliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Button1 = New Button()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Cliente))
+        Button2 = New Button()
+        button5 = New Button()
+        button3 = New Button()
+        Button6 = New Button()
+        Button7 = New Button()
+        pictureBox1 = New PictureBox()
+        label2 = New Label()
+        label1 = New Label()
+        CType(pictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' Button1
+        ' Button2
         ' 
-        Button1.Location = New Point(289, 202)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(166, 35)
-        Button1.TabIndex = 0
-        Button1.Text = "Crear Playlist"
-        Button1.UseVisualStyleBackColor = True
+        Button2.Location = New Point(12, 44)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(90, 29)
+        Button2.TabIndex = 1
+        Button2.Text = "Button2"
+        Button2.UseVisualStyleBackColor = True
+        ' 
+        ' button5
+        ' 
+        button5.BackColor = Color.Red
+        button5.FlatStyle = FlatStyle.Flat
+        button5.Font = New Font("Segoe UI Symbol", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        button5.ForeColor = Color.White
+        button5.Location = New Point(150, 366)
+        button5.Name = "button5"
+        button5.Size = New Size(160, 36)
+        button5.TabIndex = 32
+        button5.Text = "Cerrar sesión"
+        button5.UseVisualStyleBackColor = False
+        ' 
+        ' button3
+        ' 
+        button3.BackColor = Color.DodgerBlue
+        button3.FlatStyle = FlatStyle.Flat
+        button3.Font = New Font("Segoe UI Symbol", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        button3.ForeColor = Color.White
+        button3.Location = New Point(150, 298)
+        button3.Name = "button3"
+        button3.Size = New Size(160, 36)
+        button3.TabIndex = 30
+        button3.Text = "Editar usuario"
+        button3.UseVisualStyleBackColor = False
+        ' 
+        ' Button6
+        ' 
+        Button6.BackColor = Color.DodgerBlue
+        Button6.FlatStyle = FlatStyle.Flat
+        Button6.Font = New Font("Segoe UI Symbol", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Button6.ForeColor = Color.White
+        Button6.Location = New Point(150, 256)
+        Button6.Name = "Button6"
+        Button6.Size = New Size(160, 36)
+        Button6.TabIndex = 29
+        Button6.Text = "Crear playlist"
+        Button6.UseVisualStyleBackColor = False
+        ' 
+        ' Button7
+        ' 
+        Button7.BackColor = Color.DodgerBlue
+        Button7.FlatStyle = FlatStyle.Flat
+        Button7.Font = New Font("Segoe UI Symbol", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Button7.ForeColor = Color.White
+        Button7.Location = New Point(150, 214)
+        Button7.Name = "Button7"
+        Button7.Size = New Size(160, 36)
+        Button7.TabIndex = 28
+        Button7.Text = "Ver Playlist"
+        Button7.UseVisualStyleBackColor = False
+        ' 
+        ' pictureBox1
+        ' 
+        pictureBox1.BackgroundImageLayout = ImageLayout.None
+        pictureBox1.Image = CType(resources.GetObject("pictureBox1.Image"), Image)
+        pictureBox1.Location = New Point(162, 59)
+        pictureBox1.Name = "pictureBox1"
+        pictureBox1.Size = New Size(131, 123)
+        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        pictureBox1.TabIndex = 27
+        pictureBox1.TabStop = False
+        ' 
+        ' label2
+        ' 
+        label2.AutoSize = True
+        label2.Font = New Font("SimSun", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        label2.Location = New Point(183, 30)
+        label2.Name = "label2"
+        label2.Size = New Size(94, 21)
+        label2.TabIndex = 26
+        label2.Text = "CLIENTE"
+        ' 
+        ' label1
+        ' 
+        label1.AutoSize = True
+        label1.Font = New Font("SimSun", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        label1.Location = New Point(203, 9)
+        label1.Name = "label1"
+        label1.Size = New Size(58, 21)
+        label1.TabIndex = 25
+        label1.Text = "MENU"
         ' 
         ' Cliente
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
-        Controls.Add(Button1)
+        ClientSize = New Size(496, 450)
+        Controls.Add(button5)
+        Controls.Add(button3)
+        Controls.Add(Button6)
+        Controls.Add(Button7)
+        Controls.Add(pictureBox1)
+        Controls.Add(label2)
+        Controls.Add(label1)
+        Controls.Add(Button2)
         Name = "Cliente"
         Text = "Cliente"
+        CType(pictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
-
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Private WithEvents button5 As Button
+    Private WithEvents button3 As Button
+    Private WithEvents Button6 As Button
+    Private WithEvents Button7 As Button
+    Private WithEvents pictureBox1 As PictureBox
+    Private WithEvents label2 As Label
+    Private WithEvents label1 As Label
 End Class

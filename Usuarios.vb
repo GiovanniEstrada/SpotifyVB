@@ -7,6 +7,7 @@ Public Class Usuarios
     Public Property PWD As String
     Public Property ID As String
     Public Property TipoUser
+    Private Property databaseSetup As String = "server=localhost;user id=root;password=;database=prueba"
 
     Public Sub New(A As String, B As String, C As String, D As String, E As String)
         ID = A
@@ -19,7 +20,7 @@ Public Class Usuarios
     Public Function InsertarUsuario()
         'Se realiza la conexion al servidor
         Dim connection As New MySqlConnection
-        connection.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
+        connection.ConnectionString = databaseSetup
         Try
             connection.Open()
             Dim command As New MySqlCommand("INSERT INTO USUARIO (NAME, USERNAME, PWD, TIPO_USER) VALUES (@NAME, @USERNAME, @PWD, 'CLI')", connection)
@@ -43,7 +44,7 @@ Public Class Usuarios
     Public Function ObtenerTodo()
 
         Dim connection As New MySqlConnection
-        connection.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
+        connection.ConnectionString = databaseSetup
         Try
             connection.Open()
             Dim command As New MySqlCommand("SELECT * FROM USUARIO", connection)
@@ -58,7 +59,7 @@ Public Class Usuarios
 
     Public Function BorrarUsuario(id As String)
         Dim connection As New MySqlConnection
-        connection.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
+        connection.ConnectionString = databaseSetup
         Try
             connection.Open()
             Dim command As New MySqlCommand("DELETE FROM USUARIO WHERE ID = @ID", connection)
@@ -79,7 +80,7 @@ Public Class Usuarios
 
     Public Function ActualizarUsuario(nombre As String, usuario As String, contraseña As String)
         Dim connection As New MySqlConnection
-        connection.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
+        connection.ConnectionString = databaseSetup
         Try
             connection.Open()
             MessageBox.Show("Sistema conectado")
@@ -104,7 +105,7 @@ Public Class Usuarios
 
     Public Function ConsultarUsuario()
         Dim connection As New MySqlConnection
-        connection.ConnectionString = "server=localhost;user id=root;password=;database=prueba"
+        connection.ConnectionString = databaseSetup
         Try
             connection.Open()
             Dim command As New MySqlCommand("SELECT * FROM USUARIO WHERE USERNAME = @USER AND PWD = @PWD", connection)
