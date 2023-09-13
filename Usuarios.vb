@@ -78,23 +78,22 @@ Public Class Usuarios
         End Try
     End Function
 
-    Public Function ActualizarUsuario(nombre As String, usuario As String, contraseña As String)
+    Public Function ActualizarUsuario()
         Dim connection As New MySqlConnection
         connection.ConnectionString = databaseSetup
         Try
             connection.Open()
-            MessageBox.Show("Sistema conectado")
-            Dim command As New MySqlCommand("UPDATE USUARIO SET NAME = @NAME, USERNAME = @USERNAME, PWD = @PWD WHERE ID = @ID", connection)
-            command.Parameters.AddWithValue("@NAME", nombre)
-            command.Parameters.AddWithValue("@USERNAME", usuario)
-            command.Parameters.AddWithValue("@PWD", contraseña)
-            command.Parameters.AddWithValue("@ID", ID)
+            Dim command As New MySqlCommand("UPDATE USUARIO SET NAME = @NAME, PWD = @PWD WHERE ID = @ID", connection)
+            command.Parameters.AddWithValue("@NAME", Me.Nombre)
+            command.Parameters.AddWithValue("@PWD", Me.PWD)
+            command.Parameters.AddWithValue("@ID", Me.ID)
             Dim result = command.ExecuteNonQuery()
             If (result > 0) Then
                 Return True
             Else
                 Return False
             End If
+
         Catch ex As Exception
             MessageBox.Show("Fallo en la conexion actual, vuelve a intentarlo")
             Return False

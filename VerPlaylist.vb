@@ -32,4 +32,10 @@ Public Class VerPlaylist
         editar.Show()
 
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim playlist As New Playlist(ListBox2.SelectedItem.Value.ToString(), "", "", "", "")
+        Dim reproducir As New ReproducirPlaylist(Playlist)
+        reproducir.Show()
+    End Sub
 End Class

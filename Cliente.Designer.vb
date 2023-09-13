@@ -23,7 +23,6 @@ Partial Class Cliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Cliente))
-        Button2 = New Button()
         button5 = New Button()
         button3 = New Button()
         Button6 = New Button()
@@ -33,15 +32,6 @@ Partial Class Cliente
         label1 = New Label()
         CType(pictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' Button2
-        ' 
-        Button2.Location = New Point(12, 44)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(90, 29)
-        Button2.TabIndex = 1
-        Button2.Text = "Button2"
-        Button2.UseVisualStyleBackColor = True
         ' 
         ' button5
         ' 
@@ -138,14 +128,12 @@ Partial Class Cliente
         Controls.Add(pictureBox1)
         Controls.Add(label2)
         Controls.Add(label1)
-        Controls.Add(Button2)
         Name = "Cliente"
         Text = "Cliente"
         CType(pictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-    Friend WithEvents Button2 As Button
     Private WithEvents button5 As Button
     Private WithEvents button3 As Button
     Private WithEvents Button6 As Button

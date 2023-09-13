@@ -37,4 +37,9 @@ Public Class Admin
         Dim gestionarArtista As New GestionarArtista()
         gestionarArtista.Show()
     End Sub
+
+    Private Sub button4_Click(sender As Object, e As EventArgs) Handles button4.Click
+        Dim reportes As New Reportes()
+        reportes.Show()
+    End Sub
 End Class

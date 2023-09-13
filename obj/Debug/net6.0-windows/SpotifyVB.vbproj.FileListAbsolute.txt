@@ -31,3 +31,6 @@ C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\Spotify
 C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.GestionarArtista.resources
 C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.VerPlaylist.resources
 C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.EditarPlaylist.resources
+C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.ReproducirPlaylist.resources
+C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.EditarUsuario.resources
+C:\Users\cgiov\source\repos\SpotifyVB\SpotifyVB\obj\Debug\net6.0-windows\SpotifyVB.Reportes.resources

@@ -19,12 +19,6 @@ Public Class Cliente
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim player As New WMPLib.WindowsMediaPlayer
-        player.URL = "C:\Users\cgiov\Downloads\01 GCN Baby Park.mp3"
-        player.controls.play()
-    End Sub
-
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Dim playlist As New CrearPlaylist(Me.cliente)
         playlist.Show()
@@ -39,5 +33,10 @@ Public Class Cliente
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Dim verPlaylist As New VerPlaylist(Me.cliente)
         verPlaylist.Show()
+    End Sub
+
+    Private Sub button3_Click(sender As Object, e As EventArgs) Handles button3.Click
+        Dim editar As New EditarUsuario(Me.cliente)
+        editar.Show()
     End Sub
 End Class
